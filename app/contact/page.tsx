@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Grass Infratech LLP's Resource Deployment Team today. Discuss your engineering manpower needs and discover how we can support your project's success.",
+    "Contact Grass Infratech's Resource Deployment Team today. Discuss your engineering manpower needs and discover how we can support your project's success.",
 };
 
 const contactFormFields = [
@@ -51,7 +51,8 @@ export default function ContactPage() {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={100}>
-                <div className="space-y-6 mt-6">
+                <div className="space-y-4 mt-6">
+
                   {/* Address */}
                   <div className="flex items-start gap-4 p-4 bg-light-grey rounded-xl">
                     <div className="w-10 h-10 rounded-lg bg-brand-green/10 flex items-center justify-center flex-shrink-0">
@@ -61,14 +62,19 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-deep-teal font-heading mb-1">Address</h4>
+                      <h4 className="text-sm font-bold text-deep-teal font-heading mb-1">Office Locations</h4>
                       <p className="text-sm text-secondary-text leading-relaxed">
-                        31-5-9/22 Sathavahana Nagar, Revenue Ward 58, Duvvada, Visakhapatnam – 530046, Andhra Pradesh, India
+                        <span className="font-semibold text-deep-teal">Registered Office:</span><br />
+                        Visakhapatnam, Andhra Pradesh
+                      </p>
+                      <p className="text-sm text-secondary-text leading-relaxed mt-1">
+                        <span className="font-semibold text-deep-teal">Corporate Office:</span><br />
+                        Bangalore, Karnataka
                       </p>
                     </div>
                   </div>
 
-                  {/* Email */}
+                  {/* General Email */}
                   <div className="flex items-start gap-4 p-4 bg-light-grey rounded-xl">
                     <div className="w-10 h-10 rounded-lg bg-brand-green/10 flex items-center justify-center flex-shrink-0">
                       <svg className="w-5 h-5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -76,9 +82,25 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-deep-teal font-heading mb-1">Email</h4>
-                      <a href="mailto:grassinfratech@gmail.com" className="text-sm text-brand-green hover:underline">
-                        grassinfratech@gmail.com
+                      <h4 className="text-sm font-bold text-deep-teal font-heading mb-1">General Enquiries</h4>
+                      <a href="mailto:info@grassinfratech.com" className="text-sm text-brand-green hover:underline">
+                        info@grassinfratech.com
+                      </a>
+                      <p className="text-xs text-secondary-text mt-0.5">All enquiries: bd@grassinfratech.com</p>
+                    </div>
+                  </div>
+
+                  {/* HR / CV Submission */}
+                  <div className="flex items-start gap-4 p-4 bg-light-grey rounded-xl">
+                    <div className="w-10 h-10 rounded-lg bg-brand-green/10 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-brand-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-deep-teal font-heading mb-1">CV Submission / HR</h4>
+                      <a href="mailto:hr@grassinfratech.com" className="text-sm text-brand-green hover:underline">
+                        hr@grassinfratech.com
                       </a>
                     </div>
                   </div>
@@ -91,9 +113,9 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-deep-teal font-heading mb-1">Phone</h4>
-                      <a href="tel:+919910037972" className="text-sm text-brand-green hover:underline">
-                        +91 99100 37972
+                      <h4 className="text-sm font-bold text-deep-teal font-heading mb-1">Mobile</h4>
+                      <a href="tel:+919014205256" className="text-sm text-brand-green hover:underline">
+                        +91 90142 05256
                       </a>
                     </div>
                   </div>
@@ -110,6 +132,7 @@ export default function ContactPage() {
                       <p className="text-sm text-secondary-text">ACW-4846</p>
                     </div>
                   </div>
+
                 </div>
               </AnimateOnScroll>
 
@@ -124,7 +147,7 @@ export default function ContactPage() {
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="Grass Infratech LLP Location - Visakhapatnam"
+                    title="Grass Infratech Location - Visakhapatnam"
                   />
                 </div>
               </AnimateOnScroll>

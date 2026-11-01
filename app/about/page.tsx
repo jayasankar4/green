@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Grass Infratech LLP — a specialized engineering resource deployment company providing technically competent professionals to global EPC contractors, engineering consultants, and asset owners.",
+    "Learn about Grass Infratech — a specialized engineering resource deployment company providing technically competent professionals to global EPC contractors, engineering consultants, and asset owners.",
 };
 
 const trustItems = [
@@ -50,7 +50,7 @@ export default function AboutPage() {
   return (
     <>
       <Hero
-        title="About Grass Infratech LLP"
+        title="About Grass Infratech"
         subtitle="Your Trusted Engineering Workforce Partner — Delivering Competent Engineering Professionals Worldwide"
         backgroundImage="/images/hero-about.png"
         compact
@@ -69,7 +69,7 @@ export default function AboutPage() {
             <AnimateOnScroll delay={100}>
               <div>
                 <p className="text-secondary-text leading-relaxed mb-4">
-                  Grass Infratech LLP is committed to supporting engineering organizations by
+                  Grass Infratech is committed to supporting engineering organizations by
                   providing technically competent professionals on short-term, long-term and
                   project-specific assignments.
                 </p>
@@ -193,7 +193,7 @@ export default function AboutPage() {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
                 </svg>
                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed italic pl-8">
-                  Grass Infratech LLP is committed to becoming the preferred engineering workforce
+                  Grass Infratech is committed to becoming the preferred engineering workforce
                   partner for global EPC contractors, engineering consultants, project management
                   companies, and asset owners by delivering highly competent engineering professionals
                   with integrity, quality, responsiveness, and technical excellence.

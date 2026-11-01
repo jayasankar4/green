@@ -10,7 +10,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join Grass Infratech LLP's engineering talent network. Apply for engineering deployment opportunities across Oil & Gas, Energy, Infrastructure, and more.",
+    "Join Grass Infratech's engineering talent network. Apply for engineering deployment opportunities across Oil & Gas, Energy, Infrastructure, and more.",
 };
 
 const roleList = [
@@ -25,9 +25,16 @@ const careerFormFields = [
   { name: "email", label: "Email Address", type: "email" as const, required: true, placeholder: "you@example.com" },
   { name: "phone", label: "Phone Number", type: "tel" as const, required: true, placeholder: "+91 XXXXX XXXXX" },
   {
-    name: "discipline",
-    label: "Discipline / Role",
-    type: "select" as const,
+    name: "qualification",
+    label: "Qualification",
+    type: "text" as const,
+    required: true,
+    placeholder: "e.g. B.Tech Mechanical, M.Tech Civil, Diploma Electrical...",
+  },
+  {
+    name: "skills",
+    label: "Skills",
+    type: "multiselect" as const,
     required: true,
     options: [
       "Process Engineering", "Mechanical Engineering", "Piping Engineering",
@@ -41,9 +48,9 @@ const careerFormFields = [
     label: "Experience Level",
     type: "select" as const,
     required: true,
-    options: ["3–8 Years", "8–15 Years", "15–25 Years", "25+ Years"],
+    options: ["0–3 Years", "3–8 Years", "8–15 Years", "15–25 Years", "25+ Years"],
   },
-  { name: "resume", label: "Resume / CV", type: "file" as const, required: false },
+  { name: "resume", label: "Resume / CV", type: "file" as const, required: true },
   { name: "message", label: "Message (Optional)", type: "textarea" as const, required: false, placeholder: "Tell us about your experience and what type of opportunities you're looking for..." },
 ];
 
@@ -51,7 +58,7 @@ export default function CareersPage() {
   return (
     <>
       <Hero
-        title="Careers at Grass Infratech LLP"
+        title="Careers at Grass Infratech"
         subtitle="Join our engineering talent network for deployment opportunities across Oil & Gas, Energy, Infrastructure, and Industrial sectors worldwide."
         backgroundImage="/images/hero-careers.png"
         compact
@@ -68,7 +75,7 @@ export default function CareersPage() {
           </AnimateOnScroll>
           <AnimateOnScroll delay={100}>
             <p className="text-secondary-text leading-relaxed mb-4 max-w-3xl">
-              Grass Infratech LLP regularly places experienced engineering professionals across
+              Grass Infratech regularly places experienced engineering professionals across
               disciplines into short-term, long-term and project-based assignments across India and
               internationally. We are always looking for talented engineers to join our deployment
               network.
@@ -105,6 +112,7 @@ export default function CareersPage() {
                 fields={careerFormFields}
                 submitLabel="Submit Application"
                 formId="careers-form"
+                apiEndpoint="/api/careers"
               />
             </div>
           </AnimateOnScroll>

@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "Industries We Serve",
   description:
-    "Grass Infratech LLP provides engineering professionals for Oil & Gas, Power Generation, Renewable Energy, Infrastructure, Industrial Manufacturing, and Mining & Metals industries.",
+    "Grass Infratech provides engineering professionals for Oil & Gas, Power Generation, Renewable Energy, Infrastructure, Industrial Manufacturing, and Mining & Metals industries.",
 };
 
 const industries = [

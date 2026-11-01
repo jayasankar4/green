@@ -134,6 +134,11 @@ img, video, iframe, svg, canvas {
   color: var(--color-white);
 }
 
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
 /* Mobile touch improvements */
 @media (hover: none) and (pointer: coarse) {
   button, a, [role="button"] {

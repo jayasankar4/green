@@ -8,9 +8,9 @@ import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Grass Infratech LLP | Engineering Resource Deployment & Technical Staffing",
+  title: "Grass Infratech | Engineering Resource Deployment & Technical Staffing",
   description:
-    "Grass Infratech LLP delivers highly skilled engineering professionals for the global energy & infrastructure industry. Engineering staffing, resource deployment, and technical manpower solutions.",
+    "Grass Infratech delivers highly skilled engineering professionals for the global energy & infrastructure industry. Engineering staffing, resource deployment, and technical manpower solutions.",
 };
 
 /* ─── Icon Components ─── */
@@ -180,7 +180,7 @@ export default function HomePage() {
               <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-accent-green mb-4">
                 YOUR ENGINEERING WORKFORCE POWERHOUSE
               </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.25rem] font-bold font-heading text-white leading-tight mb-5">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.25rem] font-bold font-heading text-white leading-tight mb-5">
                 Right Engineers. Right Time.{" "}
                 <span className="text-accent-green">Zero Downtime.</span>
               </h1>
@@ -188,7 +188,7 @@ export default function HomePage() {
                 Fueling the World's Biggest Energy & Infrastructure Projects with Elite Engineering Talent
               </p>
               <p className="text-gray-300 leading-relaxed mb-3">
-                Grass Infratech LLP is your go-to partner for rapid engineering workforce deployment.
+                Grass Infratech is your go-to partner for rapid engineering workforce deployment.
                 We supply battle-tested engineers, design specialists, BIM experts, project managers,
                 and construction professionals to top-tier EPC contractors, consultancies, and asset owners globally.
               </p>
@@ -284,11 +284,11 @@ export default function HomePage() {
             <AnimateOnScroll>
               <div>
                 <SectionHeading
-                  eyebrow="ABOUT GRASS INFRATECH LLP"
+                  eyebrow="ABOUT Grass Infratech"
                   title="The Workforce Engine Behind World-Class Projects"
                 />
                 <p className="text-secondary-text leading-relaxed mb-4">
-                  We don't just fill positions — we fuel project success. Grass Infratech LLP
+                  We don't just fill positions — we fuel project success. Grass Infratech
                   matches technically elite professionals with your exact project needs, whether
                   it's a short-term sprint or a multi-year mega-project.
                 </p>
@@ -323,7 +323,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── WHY CHOOSE US ─── */}
-      <section className="py-16 md:py-20 bg-light-grey">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-light-grey via-white to-brand-green/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
             <SectionHeading
@@ -403,12 +403,12 @@ export default function HomePage() {
                 <Link
                   key={i}
                   href="/industries"
-                  className="group flex flex-col items-center text-center p-5 rounded-xl bg-white border border-border hover:border-brand-green/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  className="group flex flex-col items-center text-center p-3 sm:p-5 rounded-xl bg-white border border-border hover:border-brand-green/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="w-14 h-14 rounded-full bg-brand-green/10 flex items-center justify-center mb-3 text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-brand-green/10 flex items-center justify-center mb-3 text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
                     {item.icon}
                   </div>
-                  <span className="text-sm font-semibold text-deep-teal font-heading">
+                  <span className="text-xs sm:text-sm font-semibold text-deep-teal font-heading">
                     {item.label}
                   </span>
                 </Link>
@@ -419,7 +419,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── SERVICES PREVIEW ─── */}
-      <section className="py-16 md:py-20 bg-light-grey">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-light-grey via-white to-brand-green/5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <AnimateOnScroll>
             <SectionHeading

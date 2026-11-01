@@ -14,42 +14,50 @@ export default function Logo({
   showImage?: boolean;
   showTagline?: boolean;
 }) {
-  const sizes = {
-    small: { img: 40, name: "text-sm sm:text-base", tagline: true },
-    default: { img: 52, name: "text-sm sm:text-lg lg:text-xl", tagline: true },
-    large: { img: 64, name: "text-xl sm:text-2xl", tagline: true },
-  };
-
-  const s = sizes[size];
-  // When showing only the logo image (no HTML text), render at a size matching standard headers
-  const imgSize = showText ? s.img : (size === "large" ? 64 : size === "default" ? 48 : 36);
-
   return (
     <div className={`inline-flex items-center max-w-full overflow-hidden ${className}`}>
-      {/* Logo Image */}
       {showImage && (
-        <Image
-          src="/images/logo.jpg"
-          alt="Grass Infratech Logo"
-          width={imgSize}
-          height={imgSize}
-          className="flex-shrink-0 object-contain block rounded-sm mr-2.5"
-          style={{ width: `${imgSize}px`, height: `${imgSize}px` }}
-          priority
-        />
+        <div
+          className={
+            size === "small"
+              ? "relative w-28 h-10 sm:w-32 sm:h-12"
+              : size === "large"
+              ? "relative w-52 h-16 sm:w-60 sm:h-20"
+              : "relative w-36 h-12 sm:w-44 sm:h-14 lg:w-52 lg:h-16"
+          }
+        >
+          <Image
+            src="/images/logo.jpg"
+            alt="Grass Infratech Logo"
+            fill
+            className="object-contain object-left"
+            priority
+            sizes={
+              size === "small"
+                ? "128px"
+                : size === "large"
+                ? "240px"
+                : "(max-width: 640px) 144px, (max-width: 1024px) 176px, 208px"
+            }
+          />
+        </div>
       )}
 
-      {/* Wordmark */}
-      {showText && (
-        <div className="flex flex-col leading-tight min-w-0 max-w-full">
+      {showText && !showImage && (
+        <div className="flex flex-col leading-tight min-w-0 max-w-full ml-2.5">
           <span
-            className={`${s.name} font-bold tracking-wide text-deep-teal font-heading truncate`}
+            className={`${
+              size === "small"
+                ? "text-sm sm:text-base"
+                : size === "large"
+                ? "text-xl sm:text-2xl"
+                : "text-sm sm:text-lg lg:text-xl"
+            } font-bold tracking-wide text-deep-teal font-heading truncate`}
             style={{ lineHeight: 1.1 }}
           >
-            <span className="sm:hidden">GRASS INFRATECH</span>
-            <span className="hidden sm:inline">GRASS INFRATECH LLP</span>
+            GRASS INFRATECH
           </span>
-          {s.tagline && showTagline && (
+          {showTagline && (
             <span className="text-[9px] sm:text-[10px] text-secondary-text tracking-wide leading-tight hidden md:block truncate">
               Engineering Resource Deployment | Technical Staffing | Engineering Support Services
             </span>
@@ -59,4 +67,3 @@ export default function Logo({
     </div>
   );
 }
-

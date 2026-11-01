@@ -26,11 +26,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Grass Infratech LLP | Engineering Resource Deployment & Technical Staffing",
-    template: "%s | Grass Infratech LLP",
+    default: "Grass Infratech | Engineering Resource Deployment & Technical Staffing",
+    template: "%s | Grass Infratech",
   },
   description:
-    "Grass Infratech LLP provides engineering resource deployment, technical staffing, and engineering support services to EPC contractors, engineering consultants, and asset owners worldwide.",
+    "Grass Infratech provides engineering resource deployment, technical staffing, and engineering support services to EPC contractors, engineering consultants, and asset owners worldwide.",
   keywords: [
     "engineering staffing",
     "engineering resource deployment",
@@ -41,12 +41,12 @@ export const metadata: Metadata = {
     "oil and gas staffing",
     "engineering professionals",
   ],
-  authors: [{ name: "Grass Infratech LLP" }],
+  authors: [{ name: "Grass Infratech" }],
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "Grass Infratech LLP",
-    title: "Grass Infratech LLP | Engineering Resource Deployment & Technical Staffing",
+    siteName: "Grass Infratech",
+    title: "Grass Infratech | Engineering Resource Deployment & Technical Staffing",
     description:
       "Delivering Highly Skilled Engineering Professionals for the Global Energy & Infrastructure Industry",
   },
