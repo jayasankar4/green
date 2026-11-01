@@ -93,7 +93,7 @@ export async function GET() {
     const submissions = readSubmissions();
     const excelBuffer = generateExcelBuffer(submissions);
     const today = new Date().toISOString().slice(0, 10);
-    return new NextResponse(excelBuffer, {
+    return new NextResponse(new Uint8Array(excelBuffer), {
       status: 200,
       headers: {
         "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",

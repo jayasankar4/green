@@ -31,7 +31,7 @@ async function sendCareerEmail(data: Record<string, string>, cvBuffer?: Buffer, 
       }</td>
     </tr>`).join("");
 
-  const attachments: nodemailer.Attachment[] = [];
+  const attachments: { filename: string; content: Buffer }[] = [];
   if (cvBuffer && cvFilename) {
     attachments.push({ filename: cvFilename, content: cvBuffer });
   }
