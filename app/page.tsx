@@ -6,6 +6,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import SectionHeading from "@/components/SectionHeading";
 import FeatureCard from "@/components/FeatureCard";
 import CTASection from "@/components/CTASection";
+import { getSiteSettings } from "@/sanity/queries";
 
 export const metadata: Metadata = {
   title: "Grass Infratech | Engineering Resource Deployment & Technical Staffing",
@@ -161,7 +162,15 @@ const DigitalIcon = () => (
   </svg>
 );
 
-export default function HomePage() {
+export default async function HomePage() {
+  const cms = await getSiteSettings();
+
+  const heroBadge = cms?.heroBadge || "YOUR ENGINEERING WORKFORCE POWERHOUSE";
+  const heroTitle = cms?.heroTitle || "Right Engineers. Right Time. Zero Downtime.";
+  const heroSubtitle = cms?.heroSubtitle || "Fueling the World's Biggest Energy & Infrastructure Projects with Elite Engineering Talent";
+  const heroDescription = cms?.heroDescription || "Grass Infratech is your go-to partner for rapid engineering workforce deployment. We supply battle-tested engineers, design specialists, BIM experts, project managers, and construction professionals to top-tier EPC contractors, consultancies, and asset owners globally.";
+  const heroImgSrc = cms?.heroImageUrl || "/images/hero-home.png";
+
   return (
     <>
       {/* ─── HERO SECTION ─── */}
@@ -169,7 +178,7 @@ export default function HomePage() {
         {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/images/hero-home.png)" }}
+          style={{ backgroundImage: `url(${heroImgSrc})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/85 to-navy-900/60" />
 
@@ -178,19 +187,23 @@ export default function HomePage() {
             {/* Text Side */}
             <div>
               <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-accent-green mb-4">
-                YOUR ENGINEERING WORKFORCE POWERHOUSE
+                {heroBadge}
               </span>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.25rem] font-bold font-heading text-white leading-tight mb-5">
-                Right Engineers. Right Time.{" "}
-                <span className="text-accent-green">Zero Downtime.</span>
+                {heroTitle.includes("Zero Downtime") ? (
+                  <>
+                    {heroTitle.replace("Zero Downtime.", "").replace("Zero Downtime", "")}
+                    <span className="text-accent-green">Zero Downtime.</span>
+                  </>
+                ) : (
+                  heroTitle
+                )}
               </h1>
               <p className="text-lg font-semibold text-white/90 mb-4">
-                Fueling the World's Biggest Energy & Infrastructure Projects with Elite Engineering Talent
+                {heroSubtitle}
               </p>
               <p className="text-gray-300 leading-relaxed mb-3">
-                Grass Infratech is your go-to partner for rapid engineering workforce deployment.
-                We supply battle-tested engineers, design specialists, BIM experts, project managers,
-                and construction professionals to top-tier EPC contractors, consultancies, and asset owners globally.
+                {heroDescription}
               </p>
               <p className="text-gray-300 leading-relaxed mb-8">
                 One specialist or an entire multidisciplinary team — we mobilize fast, so your
@@ -224,7 +237,7 @@ export default function HomePage() {
             <div className="hidden lg:block">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
                 <Image
-                  src="/images/hero-home.png"
+                  src={heroImgSrc}
                   alt="Industrial oil refinery with engineering infrastructure at twilight"
                   width={600}
                   height={450}
