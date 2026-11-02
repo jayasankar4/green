@@ -1,11 +1,17 @@
 import { client, urlForImage } from "./lib/client";
 
+export interface FeatureCardData {
+  title?: string;
+  description?: string;
+}
+
 export interface SiteSettingsData {
   heroBadge?: string;
   heroTitle?: string;
   heroSubtitle?: string;
   heroDescription?: string;
   heroImageUrl?: string;
+  features?: FeatureCardData[];
   phone?: string;
   email?: string;
 }
@@ -19,6 +25,7 @@ export async function getSiteSettings(): Promise<SiteSettingsData | null> {
         heroSubtitle,
         heroDescription,
         heroImage,
+        features,
         phone,
         email
       }`,
@@ -43,6 +50,7 @@ export async function getSiteSettings(): Promise<SiteSettingsData | null> {
       heroSubtitle: data.heroSubtitle,
       heroDescription: data.heroDescription,
       heroImageUrl,
+      features: data.features,
       phone: data.phone,
       email: data.email,
     };

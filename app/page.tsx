@@ -347,48 +347,50 @@ export default async function HomePage() {
           </AnimateOnScroll>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-            <AnimateOnScroll delay={0} className="h-full">
-              <FeatureCard
-                icon={<TalentPoolIcon />}
-                title="Vast Engineering Talent Network"
-                description="Tap into our powerhouse of 5,000+ pre-vetted engineers spanning every discipline — from process and piping to civil, electrical, and instrumentation."
-              />
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={100} className="h-full">
-              <FeatureCard
-                icon={<MobilizationIcon />}
-                title="Lightning-Fast Mobilization"
-                description="Time is money. We deploy qualified professionals to your project site within days, not weeks — keeping your timelines on track and budgets intact."
-              />
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={200} className="h-full">
-              <FeatureCard
-                icon={<HiringIcon />}
-                title="Flexible Engagement Models"
-                description="Contract staffing, dedicated teams, project-based deployment, or permanent recruitment — choose the model that fits your project perfectly."
-              />
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={300} className="h-full">
-              <FeatureCard
-                icon={<GlobalIcon />}
-                title="Proven Global Reach"
-                description="Our professionals have delivered excellence across India, Middle East, Africa, Southeast Asia, Europe, and North America — wherever your project demands."
-              />
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={400} className="h-full">
-              <FeatureCard
-                icon={<ExperienceYearsIcon />}
-                title="Battle-Tested Engineers"
-                description="From mid-career specialists (3–8 yrs) to seasoned veterans (25+ yrs), every professional we deploy brings hands-on, real-world project experience."
-              />
-            </AnimateOnScroll>
-            <AnimateOnScroll delay={500} className="h-full">
-              <FeatureCard
-                icon={<CostIcon />}
-                title="Maximum Value, Minimal Risk"
-                description="Get top-tier engineering talent at competitive rates — we absorb the recruitment risk so you can focus on delivering world-class projects."
-              />
-            </AnimateOnScroll>
+            {(cms?.features && cms.features.length > 0 ? cms.features : [
+              {
+                title: "Vast Engineering Talent Network",
+                description: "Tap into our powerhouse of 5,000+ pre-vetted engineers spanning every discipline — from process and piping to civil, electrical, and instrumentation.",
+              },
+              {
+                title: "Lightning-Fast Mobilization",
+                description: "Time is money. We deploy qualified professionals to your project site within days, not weeks — keeping your timelines on track and budgets intact.",
+              },
+              {
+                title: "Flexible Engagement Models",
+                description: "Contract staffing, dedicated teams, project-based deployment, or permanent recruitment — choose the model that fits your project perfectly.",
+              },
+              {
+                title: "Proven Global Reach",
+                description: "Our professionals have delivered excellence across India, Middle East, Africa, Southeast Asia, Europe, and North America — wherever your project demands.",
+              },
+              {
+                title: "Battle-Tested Engineers",
+                description: "From mid-career specialists (3–8 yrs) to seasoned veterans (25+ yrs), every professional we deploy brings hands-on, real-world project experience.",
+              },
+              {
+                title: "Maximum Value, Minimal Risk",
+                description: "Get top-tier engineering talent at competitive rates — we absorb the recruitment risk so you can focus on delivering world-class projects.",
+              },
+            ]).map((feat, idx) => {
+              const icons = [
+                <TalentPoolIcon key="1" />,
+                <MobilizationIcon key="2" />,
+                <HiringIcon key="3" />,
+                <GlobalIcon key="4" />,
+                <ExperienceYearsIcon key="5" />,
+                <CostIcon key="6" />,
+              ];
+              return (
+                <AnimateOnScroll key={feat.title || idx} delay={idx * 100} className="h-full">
+                  <FeatureCard
+                    icon={icons[idx % icons.length]}
+                    title={feat.title || ""}
+                    description={feat.description || ""}
+                  />
+                </AnimateOnScroll>
+              );
+            })}
           </div>
         </div>
       </section>
