@@ -5,6 +5,7 @@ import SectionHeading from "@/components/SectionHeading";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import StepperNumbered from "@/components/StepperNumbered";
 import CTASection from "@/components/CTASection";
+import { getAboutPageData } from "@/sanity/queries";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -46,12 +47,21 @@ const mobilizationAreas = [
   "Owner's Engineer Support",
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const cms = await getAboutPageData();
+
+  const title = cms?.title || "About Grass Infratech";
+  const subtitle = cms?.subtitle || "Your Trusted Engineering Workforce Partner — Delivering Competent Engineering Professionals Worldwide";
+  const p1 = cms?.whoWeAreP1 || "Grass Infratech is committed to supporting engineering organizations by providing technically competent professionals on short-term, long-term and project-specific assignments.";
+  const p2 = cms?.whoWeAreP2 || "We help engineering companies overcome manpower challenges by supplying experienced engineers, designers, BIM specialists, project managers, inspectors and technical consultants.";
+  const p3 = cms?.whoWeAreP3 || "Our extensive talent network enables clients to quickly mobilize skilled resources for a wide range of project phases. Our professionals are deployed either remotely, at client offices or directly at project sites worldwide.";
+  const aboutImg = cms?.aboutImageUrl || "/images/about-engineers.png";
+
   return (
     <>
       <Hero
-        title="About Grass Infratech"
-        subtitle="Your Trusted Engineering Workforce Partner — Delivering Competent Engineering Professionals Worldwide"
+        title={title}
+        subtitle={subtitle}
         backgroundImage="/images/hero-about.png"
         compact
       />
@@ -69,19 +79,13 @@ export default function AboutPage() {
             <AnimateOnScroll delay={100}>
               <div>
                 <p className="text-secondary-text leading-relaxed mb-4">
-                  Grass Infratech is committed to supporting engineering organizations by
-                  providing technically competent professionals on short-term, long-term and
-                  project-specific assignments.
+                  {p1}
                 </p>
                 <p className="text-secondary-text leading-relaxed mb-4">
-                  We help engineering companies overcome manpower challenges by supplying experienced
-                  engineers, designers, BIM specialists, project managers, inspectors and technical
-                  consultants.
+                  {p2}
                 </p>
                 <p className="text-secondary-text leading-relaxed">
-                  Our extensive talent network enables clients to quickly mobilize skilled resources
-                  for a wide range of project phases. Our professionals are deployed either remotely,
-                  at client offices or directly at project sites worldwide.
+                  {p3}
                 </p>
               </div>
             </AnimateOnScroll>

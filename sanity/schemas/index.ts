@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 export const siteSettings = defineType({
   name: "siteSettings",
-  title: "Site Settings & Content",
+  title: "1. Homepage & General Info",
   type: "document",
   fields: [
     // ─── Hero Section ───
@@ -42,7 +42,7 @@ export const siteSettings = defineType({
     // ─── 6 Key Value Feature Cards ───
     defineField({
       name: "features",
-      title: "Why Choose Grass Infratech (6 Feature Cards)",
+      title: "Why Choose Grass Infratech (6 Cards)",
       type: "array",
       of: [
         {
@@ -94,7 +94,66 @@ export const siteSettings = defineType({
       type: "string",
       initialValue: "grassinfratech@gmail.com",
     }),
+    defineField({
+      name: "registeredOffice",
+      title: "Registered Office Address",
+      type: "string",
+      initialValue: "Visakhapatnam, Andhra Pradesh",
+    }),
+    defineField({
+      name: "corporateOffice",
+      title: "Corporate Office Address",
+      type: "string",
+      initialValue: "Bangalore, Karnataka",
+    }),
   ],
 });
 
-export const schemaTypes = [siteSettings];
+export const aboutPage = defineType({
+  name: "aboutPage",
+  title: "2. About Us Page",
+  type: "document",
+  fields: [
+    defineField({
+      name: "title",
+      title: "Page Title",
+      type: "string",
+      initialValue: "About Grass Infratech",
+    }),
+    defineField({
+      name: "subtitle",
+      title: "Page Subtitle",
+      type: "string",
+      initialValue: "Your Trusted Engineering Workforce Partner — Delivering Competent Engineering Professionals Worldwide",
+    }),
+    defineField({
+      name: "whoWeAreP1",
+      title: "Who We Are - Paragraph 1",
+      type: "text",
+      rows: 3,
+      initialValue: "Grass Infratech is committed to supporting engineering organizations by providing technically competent professionals on short-term, long-term and project-specific assignments.",
+    }),
+    defineField({
+      name: "whoWeAreP2",
+      title: "Who We Are - Paragraph 2",
+      type: "text",
+      rows: 3,
+      initialValue: "We help engineering companies overcome manpower challenges by supplying experienced engineers, designers, BIM specialists, project managers, inspectors and technical consultants.",
+    }),
+    defineField({
+      name: "whoWeAreP3",
+      title: "Who We Are - Paragraph 3",
+      type: "text",
+      rows: 3,
+      initialValue: "Our extensive talent network enables clients to quickly mobilize skilled resources for a wide range of project phases. Our professionals are deployed either remotely, at client offices or directly at project sites worldwide.",
+    }),
+    defineField({
+      name: "aboutImage",
+      title: "About Page Site Image",
+      type: "image",
+      options: { hotspot: true },
+    }),
+  ],
+});
+
+export const schemaTypes = [siteSettings, aboutPage];
