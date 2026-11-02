@@ -15,29 +15,29 @@ export default function Logo({
   showTagline?: boolean;
 }) {
   return (
-    <div className={`inline-flex items-center max-w-full overflow-hidden ${className}`}>
+    <div className={`inline-flex items-center max-w-full ${className}`}>
       {showImage && (
         <div
           className={
             size === "small"
-              ? "relative w-28 h-10 sm:w-32 sm:h-12"
+              ? "relative w-36 h-12 sm:w-40 sm:h-14"
               : size === "large"
-              ? "relative w-52 h-16 sm:w-60 sm:h-20"
-              : "relative w-36 h-12 sm:w-44 sm:h-14 lg:w-52 lg:h-16"
+              ? "relative w-64 h-20 sm:w-80 sm:h-24"
+              : "relative w-44 h-14 sm:w-56 sm:h-16 lg:w-64 lg:h-16"
           }
         >
           <Image
-            src="/images/logo.jpg"
+            src="/images/logo.png"
             alt="Grass Infratech Logo"
             fill
             className="object-contain object-left"
             priority
             sizes={
               size === "small"
-                ? "128px"
+                ? "160px"
                 : size === "large"
-                ? "240px"
-                : "(max-width: 640px) 144px, (max-width: 1024px) 176px, 208px"
+                ? "320px"
+                : "(max-width: 640px) 180px, (max-width: 1024px) 224px, 256px"
             }
           />
         </div>
